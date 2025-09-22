@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
 import fs from "fs";
+
 export default defineConfig({
   plugins: [react(), svgr()],
   server: {
@@ -23,6 +24,11 @@ export default defineConfig({
     proxy: {
       "/api/v1/submit": {
         target: "http://localhost:3001",
+        changeOrigin: true,
+      },
+      "/api/v1/phone": {
+        target: "http://localhost:3001",
+        changeOrigin: true,
       },
     },
   },

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import * as Dialog from "@radix-ui/react-dialog";
 import { X, ArrowRight, PhoneCall } from "lucide-react";
@@ -95,9 +95,17 @@ function App() {
   const [step, set_step] = useState(0);
   const [data, set_data] = useState<SData>({});
   const [phone, set_phone] = useState("");
+  const [phone_cont, set_phone_cont] = useState("");
   const [email, set_email] = useState("");
   const [error, e] = useState("");
+  const [error2, e2] = useState("");
   const [success_send, s_s] = useState(false);
+  const [success_send_phone, s_s_p] = useState(false);
+  useEffect(() => {
+    if (phone_cont.trim()) {
+      e2("");
+    }
+  }, [phone_cont]);
   const curr_step = steps[step];
   const option_change = (option: string) => {
     const field = curr_step.field as keyof SData;
@@ -116,6 +124,27 @@ function App() {
     }
     e("");
   };
+  const act_next_phone = async () => {
+    if (!phone_cont.trim()) {
+      e2("Пожалуйста, введите номер телефона.");
+      return;
+    }
+
+    try {
+      const r = await axios.post("/api/v1/phone", { phone: phone_cont });
+      if (r.data.success) {
+        s_s_p(true);
+        set_phone_cont("");
+        e2("");
+      } else {
+        e2("Произошла ошибка при отправке. Попробуйте позже.");
+      }
+    } catch (err) {
+      console.error(err);
+      e2("Ошибка соединения. Попробуйте позже.");
+    }
+  };
+
   const act_next = async () => {
     const field = curr_step.field as keyof SData;
     const value = data[field];
@@ -215,6 +244,39 @@ function App() {
                       +971 50 464-8630
                     </a>
                   </div>
+                  <div className={style.socials}>
+                    <a href="тут ссылка на телеграм">
+                      <img src="/public/assets/icons/telegram_logo_icon_147228.svg" />
+                    </a>
+                    <a href="тут ссылка на вц">
+                      <img src="/public/assets/icons/whatsapp_logo_icon_147205.svg" />
+                    </a>
+                  </div>
+                  <div className={style.hrs}>
+                    <p>или введите номер и мы свяжемся с вами</p>
+                  </div>
+                  <div className={style.cont_send}>
+                    <input
+                      type="tel"
+                      placeholder="+"
+                      value={phone_cont}
+                      onChange={(e) => set_phone_cont(e.target.value)}
+                      className={style.modal_st_input}
+                    />
+                    <button
+                      onClick={act_next_phone}
+                      className={style.cont_send_button}
+                    >
+                      <ArrowRight />
+                    </button>
+                  </div>
+                  {error && <p className={style.modal_st_error}>{error}</p>}
+                  {success_send_phone && (
+                    <p className={style.modal_st_s}>
+                      Спасибо! Мы получили ваш номер и свяжемся с вами в
+                      ближайшее время.
+                    </p>
+                  )}
                 </div>
               </Dialog.Content>
             </Dialog.Portal>

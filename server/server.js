@@ -131,5 +131,61 @@ ${data.email ? `Email: ${data.email}` : ""}`;
       .json({ success: false, message: "Ошибка при отправке в amoCRM" });
   }
 });
+app.post("/api/v1/phone", async (req, res) => {
+  const { phone } = req.body;
+  if (!phone) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Телефон обязателен" });
+  }
+  try {
+    const leadData = [
+      {
+        name: `Заявка (только телефон) от ${new Date().toLocaleDateString()}`,
+        pipeline_id: PIPELINE_ID,
+        custom_fields_values: [
+          {
+            field_id: 1274213,
+            values: [{ value: phone }],
+          },
+        ],
+      },
+    ];
+    const leadResp = await axios.post(
+      `https://${DOMAIN}.amocrm.ru/api/v4/leads`,
+      leadData,
+      {
+        headers: {
+          Authorization: `Bearer ${ACCESS_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const leadId = leadResp.data._embedded.leads[0].id;
+    await axios.post(
+      `https://${DOMAIN}.amocrm.ru/api/v4/leads/notes`,
+      [
+        {
+          entity_id: leadId,
+          note_type: "common",
+          params: { text: `Заявка с сайта (контактный телефон): ${phone}` },
+        },
+      ],
+      {
+        headers: {
+          Authorization: `Bearer ${ACCESS_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    res.json({ success: true, message: "Телефон успешно отправлен" });
+  } catch (error) {
+    console.error(error.response?.data || error.message);
+    res
+      .status(500)
+      .json({ success: false, message: "Ошибка при отправке в amoCRM" });
+  }
+});
 
 app.listen(PORT, () => {});
