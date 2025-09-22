@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.dubai-property-helper.ru/sitemap.xml

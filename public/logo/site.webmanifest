@@ -1,0 +1,21 @@
+{
+  "name": "dubai-property-helper",
+  "short_name": "dubai-property-helper",
+  "icons": [
+    {
+      "src": "/logo/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#3077F7",
+  "background_color": "#3077F7",
+  "display": "standalone"
+}

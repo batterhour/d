@@ -1,0 +1,7 @@
+{
+  "watch": ["server.js"],
+  "ext": "js,json,.env",
+  "execMap": {
+    "js": "node --experimental-modules"
+  }
+}
