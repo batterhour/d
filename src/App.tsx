@@ -270,7 +270,7 @@ function App() {
                       <ArrowRight />
                     </button>
                   </div>
-                  {error && <p className={style.modal_st_error}>{error}</p>}
+                  {error2 && <p className={style.modal_st_error}>{error2}</p>}
                   {success_send_phone && (
                     <p className={style.modal_st_s}>
                       Спасибо! Мы получили ваш номер и свяжемся с вами в
