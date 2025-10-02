@@ -61,22 +61,22 @@ export default function App() {
         {
             title: "Юридическая информация",
             text: "Проверяем застройщиков и объекты, защищаем ваши интересы",
-            path: "/public/assets/img/Vector.svg"
+            path: "/assets/img/Vector.svg"
         },
         {
             title: "Персональный подбор",
             text: "Учитываем ваш бюджет, стиль жизни и пожелания, чтобы предложить лучшие объекты",
-            path: "/public/assets/img/Vector2.svg"
+            path: "/assets/img/Vector2.svg"
         },
         {
             title: "Экспертное знание рынка",
             text: "Команда специалистов, которые знают все районы и новостройки Дубая",
-            path: "/public/assets/img/Vector3.svg"
+            path: "/assets/img/Vector3.svg"
         },
         {
             title: "Сотрудничество с застройщиками",
             text: "Актуальные цены и доступ к эксклюзивным предложениям",
-            path: "/public/assets/img/Vector4.svg"
+            path: "/assets/img/Vector4.svg"
         },
     ];
     const HeroMain = () => (
@@ -91,8 +91,8 @@ export default function App() {
             <div className={`${styles.SSminiBlock} ${styles.SSminiBlockMain}`}>
                 <h2>Свяжитесь с нами</h2>
                 <div className={styles.gr}>
-                    <Link to="tel:+971542236053"><img src="public/assets/img/telegram_logo_icon_147228.svg" /></Link>
-                    <Link to={import.meta.env.VITE_WHATSAPP_LINK}><img src="public/assets/img/whatsapp_logo_icon_147205.svg" /></Link>
+                    <Link to="tel:+971542236053"><img src="assets/img/telegram_logo_icon_147228.svg" /></Link>
+                    <Link to={import.meta.env.VITE_WHATSAPP_LINK}><img src="assets/img/whatsapp_logo_icon_147205.svg" /></Link>
                 </div>
                 <div className={styles.SSinputGroup}>
                     <input type="tel"
@@ -167,8 +167,8 @@ export default function App() {
             <div className={`${styles.SSminiBlock} ${styles.SSminiBlockMain}`}>
                 <h2>Свяжитесь с нами</h2>
                 <div className={styles.gr}>
-                    <Link to="tel:+971542236053"><img src="public/assets/img/telegram_logo_icon_147228.svg" /></Link>
-                    <Link to={import.meta.env.VITE_WHATSAPP_LINK}><img src="public/assets/img/whatsapp_logo_icon_147205.svg" /></Link>
+                    <Link to="tel:+971542236053"><img src="assets/img/telegram_logo_icon_147228.svg" /></Link>
+                    <Link to={import.meta.env.VITE_WHATSAPP_LINK}><img src="assets/img/whatsapp_logo_icon_147205.svg" /></Link>
                 </div>
                 <div className={styles.SSinputGroup}>
                     <input type="tel"
@@ -200,7 +200,7 @@ export default function App() {
         <div className={styles.SSapp}>
             <header className={styles.SSheader}>
                 <div className={styles.SSlogo}>
-                    <img src="public/assets/img/logo2.svg" />
+                    <img src="assets/img/logo2.svg" />
                     <span>AZUR-RESIDENCE</span>
                 </div>
                 <nav className={`${styles.SSnav} ${burgerOpen ? styles.SSnavOpen : ""}`}>
