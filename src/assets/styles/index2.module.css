@@ -1,0 +1,363 @@
+.SSapp {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Шапка */
+.SSheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  /* стекло то что закоменчено */
+  /* background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px); */
+  border-radius: 10px;
+  color: #fff;
+}
+.SSheader img {
+  width: 35px;
+}
+.SSlogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Навигация */
+.SSnav {
+  display: flex;
+  gap: 10px;
+}
+
+.SSnavItem {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.SSnavItem:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.SSnavItemActive {
+  cursor: pointer;
+  color: #c35929;
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.pks{
+    margin-bottom: 10px !important;
+}
+.ppl{
+    margin-bottom: 10px !important;
+}
+.SSburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.SSburger div {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Главный блок */
+.SShero {
+  position: relative; /* обязательно для ::before */
+  height: 100vh;
+  background-image: url("/assets/img/ec78d69077c1f034d2c1833ec5a32e0c16d32f1f.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.SSheroGlass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  max-width: 1100px;
+  width: 90%;
+  max-height: 600px;
+  overflow: auto;
+}
+.SSheroGlass::-webkit-scrollbar {
+    display: none; /* для Chrome, Safari и Opera */
+}
+/* Два большие мини-блока */
+.SSminiBlocks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.gr {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.SSminiBlock {
+  /* background: rgba(255, 255, 255, 0.15); */
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 10px;
+  flex: 1 1;
+  min-width: 300px;
+  /* max-width: 500px; */
+  color: #fff;
+  font-weight: bold;
+}
+
+.SSminiBlockMain h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.SSminiBlockMain p {
+  margin-bottom: 25px;
+  font-size: 17px;
+}
+
+.SSminiBlockMain button {
+  padding: 14px 28px;
+  border: none;
+  background: #c35929;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Инпут с кнопкой */
+.SSinputGroup {
+  display: flex;
+  gap: 10px;
+}
+.modal_st_s_s {
+  margin-bottom: 0;
+  color: green;
+  margin-top: 10px;
+}
+.SSinputGroup input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+.SSinputGroup input:focus {
+  outline: none;
+}
+.SSinputGroup button {
+  padding: 12px 20px;
+  border: none;
+  background: #c35929;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Подвал */
+.SSfooter {
+  background: #081f34;
+  color: #fff;
+  padding: 50px 20px 20px 20px;
+}
+
+.SSfooterTitle {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.SSadvantages {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.SSadvantage {
+  flex: 1 1 200px;
+  min-width: 180px;
+  text-align: center;
+  font-weight: bold;
+}
+.SSadvantage img {
+  width: 50px;
+}
+.SSadvantage h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.SSadvantage p {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.SSpolicy {
+  text-align: center;
+  font-size: 15px;
+  padding-top: 25px;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .SSheroGlass h2 {
+    font-size: 22px;
+  }
+  .SSminiBlock p {
+    font-size: 15px;
+  }
+  .SSminiBlockMain button {
+    padding: 12px 25px;
+  }
+  .SSburger {
+    display: flex;
+  }
+  .SSnav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .SSnavOpen {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .SSheroGlass {
+    padding: 20px;
+  }
+  .SSminiBlocks {
+    flex-direction: column;
+    align-items: center;
+  }
+  .SSminiBlock {
+    max-width: 90%;
+  }
+  .SSminiBlockMain h2 {
+    font-size: 20px;
+  }
+  .SSminiBlockMain p {
+    font-size: 14px;
+  }
+  .SSminiBlockMain button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .SSinputGroup input {
+    padding: 8px;
+  }
+  .SSinputGroup button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 509px) {
+  .SSinputGroup {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* Контейнер слайдера */
+.SSSContainer {
+  max-width: 1200px;
+  margin: 50px auto;
+  border-radius: 15px;
+}
+
+/* Ряд блоков */
+.SSSRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Каждый блок статьи */
+.SSSBlock {
+  flex: 1;
+  min-width: 0;
+  background-color: #bdb6b4;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 40px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.SSSBlock:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.h2im {
+  margin-bottom: 0 !important;
+  text-align: left;
+}
+/* Кнопки навигации Swiper */
+.SSSContainer .swiper-button-next,
+.SSSContainer .swiper-button-prev {
+  color: #ff7f50;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.SSSContainer .swiper-button-next:hover,
+.SSSContainer .swiper-button-prev:hover {
+  background-color: #ff7f50;
+  color: #fff;
+}
+
+/* Для мобильных экранов */
+@media (max-width: 768px) {
+  .SSSRow {
+    flex-direction: column;
+  }
+
+  .SSSBlock {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}

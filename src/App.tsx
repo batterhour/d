@@ -4,7 +4,7 @@ import BuyApartment from "./pages/BuyApartment";
 import BuyHouse from "./pages/BuyHouse";
 import BuyVilla from "./pages/BuyVilla";
 import BuyProperty from "./pages/BuyProperty";
-
+import Site1 from "./pages/Site1";
 function App() {
   return (
     <Routes>
@@ -13,6 +13,7 @@ function App() {
       <Route path="/buy-house" element={<BuyHouse />} />
       <Route path="/buy-villa" element={<BuyVilla />} />
       <Route path="/buy-property" element={<BuyProperty />} />
+      <Route path="/site-1" element={<Site1 />} />
     </Routes>
   );
 }
