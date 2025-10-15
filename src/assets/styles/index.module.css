@@ -76,6 +76,14 @@
   font-style: normal;
   font-display: swap;
 }
+:root {
+  --mnm-bg: #f8f9fb;
+  --mnm-text: #222;
+  --mnm-accent: #c19a6b;
+  --mnm-muted: #666;
+  --mnm-card-bg: #ffffff;
+  --mnm-border: #e2e2e2;
+}
 * {
   -webkit-tap-highlight-color: #fff0;
   font-family: Arial, Helvetica, sans-serif;
@@ -528,4 +536,98 @@
   text-align: center;
   width: 250px;
   justify-content: center;
+}
+.MNMbackground {
+  background-image: url("https://dubai-property-helper.ru/public/assets/img/back.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 1rem;
+  box-sizing: border-box;
+}
+.NMNWrapper {
+  position: relative;
+  z-index: 2;
+  background: var(--mnm-card-bg);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 960px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  color: var(--mnm-text);
+}
+.NMNHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.NMNTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--mnm-accent);
+  margin-bottom: 1rem;
+}
+
+.NMNSubtitle {
+  font-size: 1.1rem;
+  color: var(--mnm-muted);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.NMNSection {
+  border: 1px solid var(--mnm-border);
+  border-radius: 14px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.NMNSection:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.NMNHeading {
+  font-size: 1.5rem;
+  color: var(--mnm-accent);
+  margin-bottom: 1rem;
+}
+
+.NMNText {
+  margin-bottom: 1rem;
+  color: var(--mnm-text);
+  line-height: 1.7;
+}
+
+.NMNList {
+  list-style: disc;
+  margin: 1rem 0 1.5rem 2rem;
+  color: var(--mnm-text);
+}
+
+.NMNList li {
+  margin-bottom: 0.4rem;
+}
+@media (max-width: 768px) {
+  .NMNWrapper {
+    padding: 1.5rem;
+  }
+
+  .NMNTitle {
+    font-size: 1.8rem;
+  }
+
+  .NMNHeading {
+    font-size: 1.3rem;
+  }
 }
